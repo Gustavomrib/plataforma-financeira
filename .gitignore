@@ -1,0 +1,16 @@
+# Dependências do Node
+node_modules/
+
+# Variáveis de ambiente
+.env
+.env.*
+
+# Permite o arquivo de exemplo
+!.env.example
+
+# Logs
+*.log
+
+# Builds
+dist/
+build/
