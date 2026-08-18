@@ -1,0 +1,168 @@
+:root {
+  font-family: Inter, system-ui, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #e5e7eb;
+  background: #0f172a;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f172a, #111827);
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.app-shell {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 20px;
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 24px;
+}
+
+.panel {
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.auth-form,
+.transaction-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.auth-form input,
+.transaction-form input,
+.transaction-form select {
+  padding: 12px 14px;
+  border: 1px solid #334155;
+  border-radius: 10px;
+  background: #0b1120;
+  color: white;
+}
+
+button {
+  background: #22c55e;
+  color: #03130d;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.link-button,
+.logout-button,
+.secondary-button {
+  background: transparent;
+  color: #a5f3fc;
+  border: 1px solid #2dd4bf;
+  margin-top: 12px;
+}
+
+.danger-button {
+  background: #ef4444;
+  color: white;
+}
+
+.success {
+  color: #86efac;
+  margin-top: 12px;
+}
+
+.error {
+  color: #fca5a5;
+  margin-top: 12px;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.summary-grid > div {
+  padding: 16px;
+  border-radius: 12px;
+  background: #111827;
+  border: 1px solid #243244;
+}
+
+.summary-grid span {
+  display: block;
+  color: #94a3b8;
+  margin-bottom: 8px;
+}
+
+.inline-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+}
+
+.transaction-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.transaction-list li {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr 1fr;
+  align-items: center;
+  gap: 12px;
+  background: #111827;
+  border: 1px solid #243244;
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+
+.transaction-list strong,
+.transaction-list span {
+  display: block;
+}
+
+.transaction-actions {
+  display: flex;
+  gap: 8px;
+}
+
+@media (max-width: 800px) {
+  .app-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .summary-grid,
+  .inline-fields,
+  .transaction-list li {
+    grid-template-columns: 1fr;
+  }
+}
+
