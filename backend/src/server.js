@@ -15,12 +15,12 @@ if (!process.env.JWT_SECRET) {
 
 const PORT = process.env.PORT || 3000;
 
-app.get("/health", (req, res) => {
+app.get("/api/health", (req, res) => {
   res.json({ status: "ok" });
 });
 
-app.use("/auth", authRoutes);
-app.use("/transactions", transactionRoutes);
+app.use("/api/auth", authRoutes);
+app.use("/api/transactions", transactionRoutes);
 
 app.use((req, res) => {
   res.status(404).json({ message: "Rota não encontrada." });
@@ -31,6 +31,10 @@ app.use((error, req, res, next) => {
   res.status(500).json({ message: "Erro interno do servidor." });
 });
 
-app.listen(PORT, () => {
-  console.log(`Servidor rodando na porta ${PORT}`);
-});
+if (!process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`Servidor rodando na porta ${PORT}`);
+  });
+}
+
+module.exports = app;
